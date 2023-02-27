@@ -29,7 +29,10 @@
         </tr>
         <tr>
             <th>Image: </th>
-            <td>{{$item['cover_path']}}</td>
+            <td>
+                <img class="movie_img" src=" {{$item['cover_path']}}" width="100px" alt="">
+               
+            </td>
         </tr>
     </table>
 </div>
