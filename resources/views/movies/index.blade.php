@@ -1,4 +1,6 @@
+@extends('layouts.App')
 
+@section('content')
 <table class="table">
   <thead>
     <tr>
@@ -16,7 +18,7 @@
   @foreach($movies as $movie)
     <tr>
       <th scope="row">
-        <img src="{{ $movie['cover_path']}}" alt="" class="movie_img" width="100px">
+        <img src="{{ $movie['cover_path']}}" alt="" class="movie_img" >
       </th>
       <td>{{ $movie['title']}}</td>
       <td>{{ $movie['original_title']}}</td>
@@ -31,3 +33,4 @@
     @endforeach
   </tbody>
 </table>
+@endsection
