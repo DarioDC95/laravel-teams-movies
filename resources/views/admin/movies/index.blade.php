@@ -37,6 +37,14 @@
                 <i class="fa-solid fa-trash"></i>
             </button>
         </form>
+        <div class="d-flex">
+          <div>
+            <a class="btn btn-primary" href="{{ route('admin.movies.show', ['movie' => $movie['id']])}}" role="button"><i class="fas fa-eye"></i></a>
+          </div>
+          <div class="mx-1">
+            <a class="btn btn-warning" href="{{ route('admin.movies.edit', ['movie' => $movie['id']])}}"><i class="fa-solid fa-pen-to-square"></i></a>
+          </div>
+        </div>
       </td>
     </tr>
     @endforeach
