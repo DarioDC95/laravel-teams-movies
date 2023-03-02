@@ -34,6 +34,23 @@
                
             </td>
         </tr>
+        <tr>
+            <td>
+                <a href="{{route('admin.movies.edit', ['movie' =>$item->id])}}" class="btn btn-sm btn-square btn-warning">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+                <form action="{{route('admin.movies.destroy',  $item->id)}}" method="POST" class="d-inline-block">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger btn-square">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </form>
+                <a href="{{route('admin.movies.create')}}" class="btn btn-sm btn-square btn-success">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </td>
+        </tr>
     </table>
 </div>
 @endsection
