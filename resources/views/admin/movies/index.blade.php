@@ -27,16 +27,6 @@
       <td>{{ $movie['vote']}}</td>
       <td>{{ $movie['cast']}}</td>
       <td>
-        <a class="btn btn-sm btn-square btn-primary mb-1" href="{{ route('admin.movies.show', $movie->id) }}" role="button" title="Visualizza il progetto">
-          <i class="fa-solid fa-eye"></i>
-        </a>
-        <form action="{{ route('admin.movies.destroy', $movie->id) }}" class="d-inline-block" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-sm btn-square btn-danger">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-        </form>
         <div class="d-flex">
           <div>
             <a class="btn btn-primary" href="{{ route('admin.movies.show', ['movie' => $movie['id']])}}" role="button"><i class="fas fa-eye"></i></a>
@@ -44,6 +34,13 @@
           <div class="mx-1">
             <a class="btn btn-warning" href="{{ route('admin.movies.edit', ['movie' => $movie['id']])}}"><i class="fa-solid fa-pen-to-square"></i></a>
           </div>
+          <form action="{{ route('admin.movies.destroy', $movie->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </form>
         </div>
       </td>
     </tr>
