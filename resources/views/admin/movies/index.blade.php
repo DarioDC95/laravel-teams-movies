@@ -1,4 +1,4 @@
-@extends('layouts.App')
+@extends('layouts.admin')
 
 @section('content')
 <table class="table">
@@ -27,7 +27,7 @@
       <td>{{ $movie['vote']}}</td>
       <td>{{ $movie['cast']}}</td>
       <td>
-      <a class="btn btn-primary" href="{{ route('movies.show', ['movie' => $movie['id']])}}" role="button">View movie</a>
+      <a class="btn btn-primary" href="{{ route('admin.movies.show', ['movie' => $movie['id']])}}" role="button">View movie</a>
       </td>
     </tr>
     @endforeach
