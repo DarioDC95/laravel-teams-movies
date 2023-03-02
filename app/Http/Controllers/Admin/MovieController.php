@@ -86,7 +86,7 @@ class MovieController extends Controller
 
         $movie->update($form_data);
 
-        return redirect()->route('admin.projects.index')->with('message', 'Il Progetto modificato correttamente');
+        return redirect()->route('admin.movies.index')->with('message', 'Il Progetto modificato correttamente');
     }
 
     /**
