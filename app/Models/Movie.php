@@ -10,6 +10,4 @@ class Movie extends Model
     protected $fillable = ['title', 'original_title', 'nationality', 'release_date', 'vote', 'cast', 'cover_path'];
     
     use HasFactory;
-
-    protected $fillable = ['title', 'original_title', 'nationality', 'release_date', 'vote', 'cast', 'cover_path'];
 }

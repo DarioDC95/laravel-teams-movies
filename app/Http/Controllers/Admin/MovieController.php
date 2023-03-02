@@ -99,7 +99,7 @@ class MovieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
 
         $movie = Movie::findOrFail($id);
 
