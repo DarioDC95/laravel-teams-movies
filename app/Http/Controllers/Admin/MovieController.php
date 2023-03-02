@@ -80,7 +80,13 @@ class MovieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $form_data = $request->all();
+
+        $movie = Movie::findOrFail($id);
+
+        $movie->update($form_data);
+
+        return redirect()->route('admin.projects.index')->with('message', 'Il Progetto modificato correttamente');
     }
 
     /**
