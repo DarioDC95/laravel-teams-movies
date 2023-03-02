@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<table class="table">
+<table class="table table-striped">
   <thead>
-    <tr>
+    <tr class="text-center">
       <th scope="col">Cover</th>
       <th scope="col">Title</th>
       <th scope="col">Original title</th>
@@ -16,7 +16,7 @@
   </thead>
   <tbody>
   @foreach($movies as $movie)
-    <tr>
+    <tr class="text-center">
       <th scope="row">
         <img src="{{ $movie['cover_path']}}" alt="" class="movie_img" >
       </th>
@@ -27,7 +27,7 @@
       <td>{{ $movie['vote']}}</td>
       <td>{{ $movie['cast']}}</td>
       <td>
-        <a class="btn btn-sm btn-primary" href="{{ route('admin.movies.show', $movie->id) }}" role="button" title="Visualizza il progetto">
+        <a class="btn btn-sm btn-square btn-primary mb-1" href="{{ route('admin.movies.show', $movie->id) }}" role="button" title="Visualizza il progetto">
           <i class="fa-solid fa-eye"></i>
         </a>
         <form action="{{ route('admin.movies.destroy', $movie->id) }}" class="d-inline-block" method="POST">
