@@ -105,8 +105,6 @@ class MovieController extends Controller
 
         $movie = Movie::findOrFail($id);
         $movie->update($form_data);
-        dd($movie);
-
 
         return redirect()->route('admin.movies.index')->with('message', 'Il Progetto modificato correttamente');
     }
