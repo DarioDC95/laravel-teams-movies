@@ -2,8 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="card mb-3">
-        <img class="card-img-top" src=" {{$item['cover_path']}}" alt="Card image cap">
+    <div class="card mb-3 text-center my-5">
+        <div class="text-center py-3">
+            <img class="card-img-top movie_img "   src=" {{$item['cover_path']}}" alt="Card image cap">
+        </div>
         <div class="card-body">
           <h5 class="card-title">Title: {{$item['title']}}</h5>
           <h5 class="card-title">Original title: {{$item['original_title']}}</h5>
