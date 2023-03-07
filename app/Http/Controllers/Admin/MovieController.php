@@ -87,8 +87,9 @@ class MovieController extends Controller
     public function edit($id)
     {
         $movie = Movie::findOrFail($id);
+        $genres = Genre::all();
 
-        return view('admin.movies.edit', compact('movie'));
+        return view('admin.movies.edit', compact('movie', 'genres'));
     }
 
     /**
@@ -103,8 +104,9 @@ class MovieController extends Controller
         $form_data = $this->validation($request->all());
 
         $movie = Movie::findOrFail($id);
-
         $movie->update($form_data);
+        dd($movie);
+
 
         return redirect()->route('admin.movies.index')->with('message', 'Il Progetto modificato correttamente');
     }
