@@ -57,13 +57,21 @@
                 @error('vote')
                     <div class="text-danger">{{$message}}</div>
                 @enderror
-                <div class="mb-3 form-group">
-                    <label for="cast" class="control-label">Cast: </label>
-                    <input type="text" class="form-control" id="cast" name="cast" placeholder="Inserisci il cast del film">
+                
+                <div class="form-group mb-4">
+                    <label class="control-label">Genere: </label>
+                    <select class="form-select" id="genre_id" name="genre_id">
+                        <option value="" selected disabled>Scegli il genere del film</option>
+                        @foreach ($genres as $item)
+                            <option value="{{ $item->id }}" >{{ $item->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('genre_id')
+                        @foreach ($errors->get('genre_id') as $value)
+                            <div class="text-danger">{{ $value }}</div>
+                        @endforeach
+                    @enderror
                 </div>
-                @error('cast')
-                    <div class="text-danger">{{$message}}</div>
-                @enderror
                 <div class="mb-3 form-group">
                     <label for="cover_path" class="control-label">Url immagine: </label>
                     <input type="text" class="form-control" id="cover_path" name="cover_path" placeholder="Inserisci l'URL per l'immagine del film">

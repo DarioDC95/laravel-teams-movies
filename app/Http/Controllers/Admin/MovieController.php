@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Movie;
+use App\Models\Genre;
 
 class MovieController extends Controller
 {
@@ -28,8 +29,8 @@ class MovieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.movies.create');
+    {   $genres = Genre::all(); 
+        return view('admin.movies.create' , compact('genres'));
     }
 
     /**
@@ -42,15 +43,14 @@ class MovieController extends Controller
     {
         $form_data = $this->validation($request->all());
 
-        $form_data = $request->all();
-
+        
         $newMovie = new Movie();
         $newMovie->title = $form_data['title'];
         $newMovie->original_title = $form_data['original_title'];
         $newMovie->nationality = $form_data['nationality'];
         $newMovie->release_date = $form_data['release_date'];
         $newMovie->vote = $form_data['vote'];
-        $newMovie->cast = $form_data['cast'];
+        $newMovie->genre_id = $form_data['genre_id'];
         $newMovie->cover_path = $form_data['cover_path'];
 
 
@@ -70,6 +70,7 @@ class MovieController extends Controller
     public function show($id)
     {
         $movie = Movie::findOrFail($id);
+       
         $item = [
             'item' => $movie
         ];
@@ -128,7 +129,7 @@ class MovieController extends Controller
             'nationality'=> 'max:30',
             'release_date'=> 'required',
             'vote'=> 'required',
-            'cast'=> 'required',
+            'genre_id'=> ['nullable', 'exists:genres,id'],
             'cover_path'=> 'required'
         ],[
             'title.required' => 'Devi inserire un titolo!',
@@ -137,7 +138,7 @@ class MovieController extends Controller
             'nationality.max' => 'La nazionalità può avere massimo 30 caratteri!',
             'release_date.required' => 'Devi inserire la data di rilascio!',
             'vote.required' => 'Devi inserire un voto per il film!',
-            'cast.required' => 'Devi inserire il cast del film!',
+            'genre.exists' => 'Il genere selezionato non è valido',
             'cover_path.required' => 'Devi inserire un Url come immagine del film!',
             
         ])->validate();

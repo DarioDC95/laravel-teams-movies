@@ -10,7 +10,7 @@
       <th scope="col">Nationality</th>
       <th scope="col">Release_date</th>
       <th scope="col">Vote</th>
-      <th scope="col">Cast</th>
+      <th scope="col">Genere</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -25,7 +25,13 @@
       <td>{{ $movie['nationality']}}</td>
       <td>{{ $movie['release_date']}}</td>
       <td>{{ $movie['vote']}}</td>
-      <td>{{ $movie['cast']}}</td>
+      <td>
+      @if ($movie->genre_id)
+        {{$movie->genre->name}}
+      @else
+        Genere non disponibile
+      @endif
+      </td>
       <td>
         <div class="d-flex">
           <div>
