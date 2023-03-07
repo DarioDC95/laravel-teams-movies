@@ -101,6 +101,66 @@
                 'cast'  => 'Johnny Depp, Christina Ricci, Miranda Richardson, Michael Gambon, Christopher Walken, Christopher Lee',
                 'cover_path' => 'https://www.themoviedb.org/t/p/w1280/5KkmPSGnZvynFJL1dPculX2KcR4.jpg'
             ]
+        ],
+
+        'cast' => [
+
+            'Marlon Brando', 
+            'Al Pacino', 
+            'James Caan', 
+            'Robert Duval', 
+            'Viggo Mortensen', 
+            'Elijah Wood', 
+            'Sean Astin', 
+            'Ian McKellen', 
+            'Andy Serkis', 
+            'Liv Tyler', 
+            'Christopher Lee', 
+            'Hugo Weaving', 
+            'Karl Urban', 
+            'Cate Blanchett',
+            'Lacey Duvall', 
+            'Jack Nicholson',
+            'Sandra Bullock', 
+            'George Clooney', 
+            'Ed Harris',
+            'Natalie Portman', 
+            'Stephen Rea',
+            'John Travolta',
+            'Samuel L Jackson', 
+            'Bruce Willis', 
+            'Uma Thurman',
+            'Tom Hanks', 
+            'Robin Wright', 
+            'Gary Sinise', 
+            'Mykelti Williamson', 
+            'Sally Field',
+            'Mark Hammil', 
+            'Harrison Ford', 
+            'Carrie Fisher', 
+            'Billy Dee Williams', 
+            'David Prowse',
+            'Henry Thomas',
+            'Drew Barrymore',
+            'Johnny Depp', 
+            'Christina Ricci', 
+            'Miranda Richardson', 
+            'Michael Gambon', 
+            'Christopher Walken',
+            'Tom Cruise', 
+            'Nicole Kidman'
+        ],
+
+        'genre' => [
+
+            'Azione',
+            'Horror',
+            'Avventura',
+            'Fantasy',
+            'Thriller',
+            'Fantascienza',
+            'Comico',
+            'Biografico'
         ]
     ]
 ?>
